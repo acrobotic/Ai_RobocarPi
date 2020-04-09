@@ -1,61 +1,41 @@
-    1  ssh denbot05.local
-    2  ssh denbot05.local
-    3  sudo vi /etc/hostname 
-    4  sudo hostname denbot01
-    5  sudo vi /etc/hosts
-    6  sudo apt-get update
-    7  sudo apt-get dist-upgrade
-    8  clear
-    9  sudo apt-get install ipython-notebook
-   10  sudo apt-get install vim
-   11  ipython profile create nbserver
-   12  sudo /etc/init.d/hostname.sh 
-   13  sudo vi /etc/init.d/vncboot
-   14  scp denbot05.local:~/.ipython/profile_nbserver/ipython_notebook_config.py .ipython/profile_nbserver/ipython_notebook_config.py 
-   15  scp denbot05.local:/etc/systemd/system/ipython-notebook.service .
-   16  ls -l /etc/systemd/system/
-   17  sudo chown root:root ipython-notebook.service 
-   18  sudo mv ipython-notebook.service /etc/systemd/system/.
-   19  sudo reboot
-   20  hostname
-   21  sudo hostname denbot01
-   22  sudo vi /etc/hosts
-   23  sudo /etc/init.d/hostname.sh 
-   24  sudo reboot
-   25  sudo vi /etc/hostname 
-   26  sudo /etc/init.d/hostname.sh 
-   27  hostname
-   28  sudo reboot
-   29  ssh denbot05
-   30  sudo vi /etc/systemd/system/ipython-notebook.service 
-   31  mkdir Makerden
-   32  sudo systemctl start ipython-notebook.service
-   33  sudo systemctl start ipython-notebook.servic
-   34  sudo apt-get install tightvncserver
-   35  scp denbot05.local:/etc/systemd/system/vncserver@.service .
-   36  ls -l
-   37  sudo chown root:root vncserver@.service 
-   38  sudo mv vncserver@.service /etc/systemd/system/.
-   39  scp denbot05.local:~/.vimrc .
-   40  sudo systemctl start vncserver@.service
-   41  sudo systemctl start vncserver.service
-   42  sudo systemctl start vncserver1.service
-   43  sudo systemctl start vncserver@1.service
-   44  systemctl status vncserver@1.service
-   45  /usr/bin/vncserver -depth 24 -geometry 1440x900
-   46  sudo reboot
-   47  ls
-   48  systemctl status vncserver@1.service
-   49  sudo systemctl start vncserver@1.service
-   50  sudo systemctl enable ipython-notebook
-   51  sudo systemctl enable vncserver.service
-   52  sudo systemctl enable vncserver".service
-   53  sudo systemctl enable vncserver@.service
-   54  sudo systemctl enable vncserver1.service
-   55  sudo systemctl enable vncserver@0.service
-   56  sudo reboot
-   57  ssh denbot05.local
-   58  sudo systemctl start vncserver@1.service
-   59  sudo systemctl enable vncserver@1.service
-   60  sudo rm /etc/systemd/system/multi-user.target.wants/vncserver@0.service 
-   61  sudo reboot
+    sudo vi /etc/hostname 
+    sudo hostname denbot01
+    sudo vi /etc/hosts
+    sudo apt-get update && sudo apt-get dist-upgrade
+    sudo apt-get install ipython-notebook vim
+    ipython profile create nbserver
+    sudo /etc/init.d/hostname.sh 
+    sudo vi /etc/init.d/vncboot
+    scp denbot05.local:~/.ipython/profile_nbserver/ipython_notebook_config.py .ipython/profile_nbserver/ipython_notebook_config.py 
+    scp denbot05.local:/etc/systemd/system/ipython-notebook.service .
+    ls -l /etc/systemd/system/
+    sudo chown root:root ipython-notebook.service 
+    sudo mv ipython-notebook.service /etc/systemd/system/.
+    sudo reboot
+    hostname
+    sudo hostname denbot01
+    sudo vi /etc/hosts
+    sudo /etc/init.d/hostname.sh 
+    sudo reboot
+    sudo vi /etc/hostname 
+    sudo /etc/init.d/hostname.sh 
+    hostname
+    sudo reboot
+    ssh denbot05
+    sudo vi /etc/systemd/system/ipython-notebook.service 
+    mkdir Makerden
+    sudo systemctl start ipython-notebook.service
+    sudo systemctl start ipython-notebook.servic
+    sudo apt-get install tightvncserver
+    scp denbot05.local:/etc/systemd/system/vncserver@.service .
+    ls -l
+    sudo chown root:root vncserver@.service 
+    sudo mv vncserver@.service /etc/systemd/system/.
+   scp denbot05.local:~/.vimrc .
+   sudo systemctl start vncserver@.service
+   systemctl status vncserver@1.service
+   /usr/bin/vncserver -depth 24 -geometry 1440x900
+   sudo reboot
+   systemctl status vncserver@1.service
+   sudo systemctl enable ipython-notebook
+   sudo systemctl start vncserver@1.service
